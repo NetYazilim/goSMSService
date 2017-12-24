@@ -4,7 +4,7 @@ import (
 	// "JetSMSDemo/smsService"
 	"fmt"
 
-	smsService "git.has.com.tr/Has/goJetSMS/SMSService"
+	smsService "github.com/NetYazilim/goSMSService"
 )
 
 // gowsdl -o JetSMS.go -p smsService  https://www.jetsms.net/ws/soapsms.asmx?WSDL
@@ -14,6 +14,7 @@ func main() {
 	url := "https://www.jetsms.net/ws/soapsms.asmx"
 
 	client := smsService.NewSMSServiceSoap(url, true, nil)
+
 	req := &smsService.SendSMSSingle{User: "User", Password: "Password", Originator: "Originator", Receipents: "Receipents", Messages: "Message"}
 	//	var resp *smsService.SendSMSSingleResponse
 	//	var err error
